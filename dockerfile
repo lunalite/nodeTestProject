@@ -9,11 +9,11 @@ RUN mkdir -p /data/db
 EXPOSE 27017
 ENTRYPOINT ["/usr/bin/mongod"]
 
-FROM node:latest
-RUN mkdir /build
-ADD ./ /build
-WORKDIR /build
+#FROM node:latest
+#RUN mkdir /build
+#ADD ./ /build
+#WORKDIR /build
 
-RUN cd /build && \
-	npm config set http-proxy ${http_proxy} --global && \
-	npm install
+#RUN cd /build && \
+	#npm config set http-proxy ${http_proxy} --global && \
+	#npm install
