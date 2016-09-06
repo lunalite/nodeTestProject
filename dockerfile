@@ -1,5 +1,5 @@
 FROM node:latest
-ENV proxy http://webproxy.merck.com:8080
+ENV proxy ${http_proxy}
 RUN mkdir /build
 ADD ./ /build
 WORKDIR /build
