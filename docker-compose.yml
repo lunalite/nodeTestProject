@@ -1,0 +1,12 @@
+version: '2'
+services: 
+    db:
+        container_name: mongodb-$APP_NAME-$BUILD_NUMBER
+        image: mongo
+        #environment:
+        ports: 
+            - 27017
+    app:
+        container_name: $APP_NAME-$BUILD_NUMBER
+        image: $IMAGE_NAME:$BUILD_NUMBER
+        network_mode: "container:db"
