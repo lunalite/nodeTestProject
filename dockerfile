@@ -4,5 +4,5 @@ ADD ./ /build
 WORKDIR /build
 
 RUN cd /build && \
-	npm config set proxy ${HTTP_PROXY} --global && \
+	npm config set proxy ${http_proxy} --global && \
 	npm install
