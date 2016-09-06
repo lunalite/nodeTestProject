@@ -10,3 +10,4 @@ services:
         container_name: $APP_NAME-$BUILD_NUMBER
         image: $IMAGE_NAME:$BUILD_NUMBER
         network_mode: "service:db"
+        command: ./scripts/docker_command.sh
