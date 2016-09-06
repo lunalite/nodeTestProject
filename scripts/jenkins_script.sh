@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "*** Building $IMAGE_NAME:$BUILD_NUMBER ..."
-docker build -t $IMAGE_NAME:$BUILD_NUMBER .
+docker build -t $IMAGE_NAME:$BUILD_NUMBER . --build-arg http_proxy=http://webproxy.merck.com:8080
 #docker push $IMAGE_NAME:$BUILD_NUMBER
 
 echo "*** Running compose ..."
