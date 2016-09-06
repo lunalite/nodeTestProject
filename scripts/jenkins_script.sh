@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-echo "*** Allowing shell to be configured for docker ..."
-eval "$(docker-machine env default)"
 
 echo "*** Building $IMAGE_NAME:$BUILD_NUMBER ..."
 docker build -t $IMAGE_NAME:$BUILD_NUMBER .
