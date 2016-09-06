@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+echo "*** Building $IMAGE_NAME:$BUILD_NUMBER ..."
+docker build -t $IMAGE_NAME:$BUILD_NUMBER .
+#docker push $IMAGE_NAME:$BUILD_NUMBER
+
+echo "*** Running compose ..."
+docker-compose up -d
+TEST_RESULT=`docker wait $APP_NAME-$BUILD_NUMBER`
+
+#echo "*** Copying logs ..."
+#LOG_DATE=$(date +%F_%R)
+#docker cp $APP_NAME-$BUILD_NUMBER:/build/test.log ./test.log-${LOG_DATE}
+#cat ./test.log-${LOG_DATE}
+
+#echo "*** Copying coverage files ..."
+#rm -r ./coverage
+#docker cp $APP_NAME-$BUILD_NUMBER:/build/coverage ./
+
+echo "*** Killing and removing compose ..."
+docker-compose kill && docker-compose rm -f
+
+echo "*** Removing images ..."
+docker rmi -f $IMAGE_NAME:$BUILD_NUMBER
+
+echo "*** Exiting ..."
+exit $TEST_RESULT
