@@ -10,4 +10,7 @@ services:
         container_name: $APP_NAME-$BUILD_NUMBER
         image: $IMAGE_NAME:$BUILD_NUMBER
         network_mode: "service:db"
-        command: npm test-coverage 
+	environment:
+	    NODE_SECRET = bukitPanjang993
+	    NODE_ENV = test
+        command: npm test
