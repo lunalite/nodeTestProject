@@ -10,4 +10,4 @@ services:
         container_name: $APP_NAME-$BUILD_NUMBER
         image: $IMAGE_NAME:$BUILD_NUMBER
         network_mode: "service:db"
-        command: bash ./scripts/docker_command.sh
+        command: npm test-coverage 
