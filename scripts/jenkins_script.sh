@@ -5,7 +5,7 @@ docker build -t $IMAGE_NAME:$BUILD_NUMBER .
 #docker push $IMAGE_NAME:$BUILD_NUMBER
 
 echo "*** Running compose ..."
-docker-compose up -d
+docker-compose up
 TEST_RESULT=`docker wait $APP_NAME-$BUILD_NUMBER`
 
 #echo "*** Copying logs ..."
