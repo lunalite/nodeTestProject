@@ -18,4 +18,4 @@ do
 done
 
 echo "Executing ... " >> test.log
-npm run test-coverage >> test.log
+npm run test >> test.log
