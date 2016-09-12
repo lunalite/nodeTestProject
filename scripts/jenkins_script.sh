@@ -10,9 +10,6 @@ TEST_RESULT=`docker wait $APP_NAME-$BUILD_NUMBER`
 
 echo "*** Copying logs ..."
 LOG_DATE=$(date +%F_%R)
-echo "why no log?"
-ls -la
-echo "no log still?"
 docker cp $APP_NAME-$BUILD_NUMBER:/build/test.log ./test.log-${LOG_DATE}
 cat ./test.log-${LOG_DATE}
 
