@@ -8,3 +8,5 @@ WORKDIR /build
 RUN cd /build && \
         npm config set proxy ${http_proxy} --global && \
         npm install
+
+RUN chmod +x ./scripts/docker_command.sh	

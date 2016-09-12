@@ -13,4 +13,4 @@ services:
         environment: 
             - NODE_SECRET=bukitPanjang993
             - NODE_ENV=test
-        command: sh ./scrips/docker_command.sh
+        command: ./scrips/docker_command.sh
