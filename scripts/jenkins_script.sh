@@ -14,7 +14,7 @@ docker cp $APP_NAME-$BUILD_NUMBER:/build/test.log ./test.log-${LOG_DATE}
 cat ./test.log-${LOG_DATE}
 
 echo "*** Copying coverage files ..."
-rm -r ./coverage
+#rm -r ./coverage
 docker cp $APP_NAME-$BUILD_NUMBER:/build/coverage ./
 
 echo "*** Killing and removing compose ..."
