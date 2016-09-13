@@ -19,4 +19,4 @@ done
 
 echo "Executing ... " >> test.log
 npm run test >> test.log
-pwd
+
