@@ -14,8 +14,6 @@ docker cp $APP_NAME-$BUILD_NUMBER:$WORKSPACE/test.log ./test.log-${LOG_DATE}
 cat ./test.log-${LOG_DATE}
 
 echo "*** Copying coverage files ..."
-ls -la
-pwd
 rm -r ./coverage
 docker cp $APP_NAME-$BUILD_NUMBER:$WORKSPACE/coverage ./
 
