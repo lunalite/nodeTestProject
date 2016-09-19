@@ -14,6 +14,7 @@ docker cp $APP_NAME-$BUILD_NUMBER:/var/lib/jenkins/workspace/nodeProject/test.lo
 cat ./test.log-${LOG_DATE}
 
 echo "*** Copying coverage files ..."
+ls -la
 pwd
 rm -r ./coverage
 docker cp $APP_NAME-$BUILD_NUMBER:/var/lib/jenkins/workspace/nodeProject/coverage ./
