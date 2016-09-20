@@ -1,6 +1,5 @@
 FROM node:latest
 ARG WORKSPACE
-ENV http_proxy http://webproxy.merck.com:8080
 
 RUN mkdir -p $WORKSPACE
 ADD ./ $WORKSPACE
